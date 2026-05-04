@@ -1,0 +1,13 @@
+[
+{
+  "title": "Hardening SSH en Linux: de la configuración básica al bastionado real",
+  "permalink": "/seguridad/hardening-ssh/",
+  "summary": "SSH es la puerta de entrada a cualquier servidor Linux. Aunque su configuración por defecto es funcional, dista mucho de ser segura en un entorno de producción.\n1. Deshabilitar autenticación por contraseña {{\u0026lt; advertencia \u0026gt;}} Antes de deshabilitar la autenticación por contraseña, asegúrate de tener al menos una clave SSH válida en ~/.ssh/authorized_keys. {{\u0026lt; /advertencia \u0026gt;}}\n# Editar configuración de SSH sudo nano /etc/ssh/sshd_config # Modificar estas directivas: PasswordAuthentication no PubkeyAuthentication yes # Reiniciar el servicio sudo systemctl restart sshd 2. Configurar Fail2ban {{\u0026lt; tip \u0026gt;}} Fail2ban monitoriza los logs de autenticación y bloquea automáticamente IPs que superan un número de intentos fallidos. {{\u0026lt; /tip \u0026gt;}}\n",
+  "tags": ["SSH","hardening","OpenSSH","Linux"]
+},
+{
+  "title": "Gestión de procesos en Linux: systemd, cgroups y control de recursos",
+  "permalink": "/linux/gestion-procesos/",
+  "summary": "systemd es el sistema de inicio y gestor de servicios estándar en la mayoría de distribuciones Linux modernas.\nUnits y targets en systemd systemd organiza todo en unidades (units). Un servicio, un socket, un punto de montaje, un timer — todo es una unit.\n# Ver todos los servicios activos systemctl list-units --type=service --state=running # Inspeccionar una unit systemctl cat nginx.service Control de recursos con cgroups v2 {{\u0026lt; nota \u0026gt;}} cgroups v2 es la versión unificada de control de grupos en el kernel Linux. {{\u0026lt; /nota \u0026gt;}}\n",
+  "tags": ["systemd","cgroups","procesos","rendimiento"]
+}]

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rendimiento on AI Security &amp; Data</title>
+    <link>http://localhost:1313/tags/rendimiento/</link>
+    <description>Recent content in Rendimiento on AI Security &amp; Data</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 25 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/rendimiento/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gestión de procesos en Linux: systemd, cgroups y control de recursos</title>
+      <link>http://localhost:1313/linux/gestion-procesos/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linux/gestion-procesos/</guid>
+      <description>&lt;p&gt;systemd es el sistema de inicio y gestor de servicios estándar en la mayoría de distribuciones Linux modernas.&lt;/p&gt;&#xA;&lt;h2 id=&#34;units-y-targets-en-systemd&#34;&gt;Units y targets en systemd&lt;/h2&gt;&#xA;&lt;p&gt;systemd organiza todo en unidades (units). Un servicio, un socket, un punto de montaje, un timer — todo es una unit.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#abb2bf;background-color:#282c34;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7f848e&#34;&gt;# Ver todos los servicios activos&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl list-units --type&lt;span style=&#34;color:#56b6c2&#34;&gt;=&lt;/span&gt;service --state&lt;span style=&#34;color:#56b6c2&#34;&gt;=&lt;/span&gt;running&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7f848e&#34;&gt;# Inspeccionar una unit&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl cat nginx.service&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;control-de-recursos-con-cgroups-v2&#34;&gt;Control de recursos con cgroups v2&lt;/h2&gt;&#xA;&lt;p&gt;{{&amp;lt; nota &amp;gt;}}&#xA;cgroups v2 es la versión unificada de control de grupos en el kernel Linux.&#xA;{{&amp;lt; /nota &amp;gt;}}&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

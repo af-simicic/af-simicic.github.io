@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
+
+  <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
+</head>
+
+<body data-slug="{{ if .File }}{{ .Params.slug | default .File.ContentBaseName }}{{ end }}">
+
+  {{ partial "header.html" . }}
+
+  {{ block "main" . }}{{ end }}
+
+  {{ partial "footer.html" . }}
+
+  <script src="{{ "js/script.js" | relURL }}"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <a href="{{ "/" | relURL }}" class="site-logo">
+        <span class="logo-text">Andrés <span>Fuentes</span></span>
+      </a>
+      <p class="footer-tagline">Blog técnico · {{ now.Format "2006" }}</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Navegación de pie de página">
+      <a href="{{ "/linux/" | relURL }}" {{ if eq .Section "linux" }}class="active"{{ end }}>Linux</a>
+      <a href="{{ "/seguridad/" | relURL }}" {{ if eq .Section "seguridad" }}class="active"{{ end }}>Seguridad</a>
+      <a href="{{ "/data/" | relURL }}" {{ if eq .Section "data" }}class="active"{{ end }}>Data</a>
+      <a href="{{ "/ia/" | relURL }}" {{ if eq .Section "ia" }}class="active"{{ end }}>IA</a>
+    </nav>
+
+  </div>
+</footer> 

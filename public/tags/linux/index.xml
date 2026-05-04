@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on AI Security &amp; Data</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on AI Security &amp; Data</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hardening SSH en Linux: de la configuración básica al bastionado real</title>
+      <link>http://localhost:1313/seguridad/hardening-ssh/</link>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/seguridad/hardening-ssh/</guid>
+      <description>&lt;p&gt;SSH es la puerta de entrada a cualquier servidor Linux. Aunque su configuración por defecto es funcional, dista mucho de ser segura en un entorno de producción.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-deshabilitar-autenticación-por-contraseña&#34;&gt;1. Deshabilitar autenticación por contraseña&lt;/h2&gt;&#xA;&lt;p&gt;{{&amp;lt; advertencia &amp;gt;}}&#xA;Antes de deshabilitar la autenticación por contraseña, asegúrate de tener al menos una clave SSH válida en &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt;.&#xA;{{&amp;lt; /advertencia &amp;gt;}}&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#abb2bf;background-color:#282c34;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7f848e&#34;&gt;# Editar configuración de SSH&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nano /etc/ssh/sshd_config&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7f848e&#34;&gt;# Modificar estas directivas:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PasswordAuthentication no&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PubkeyAuthentication yes&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7f848e&#34;&gt;# Reiniciar el servicio&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl restart sshd&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2-configurar-fail2ban&#34;&gt;2. Configurar Fail2ban&lt;/h2&gt;&#xA;&lt;p&gt;{{&amp;lt; tip &amp;gt;}}&#xA;Fail2ban monitoriza los logs de autenticación y bloquea automáticamente IPs que superan un número de intentos fallidos.&#xA;{{&amp;lt; /tip &amp;gt;}}&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
