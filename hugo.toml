@@ -1,54 +1,49 @@
 baseURL = "https://af-simicic.github.io/"
-languageCode = "es"
-title = "AI Security & Data"
+languageCode = "es-AR"
+title = "af.dev"
+theme = "af-theme"
+enableRobotsTXT = true
+pygmentsUseClasses = true
+pygmentsCodeFences = true
 
-# Renderizado Markdown
-[markup]
-  [markup.tableOfContents]
-    startLevel = 2
-    endLevel = 3
-    ordered = false
-
-  [markup.highlight]
-    style = "onedark"
-    lineNos = false
-    tabWidth = 2
-
-  [markup.goldmark.renderer]
-    unsafe = true
-
-# Parámetros del sitio
 [params]
   author = "Andrés Fuentes"
-  bio = "Analista de datos en formación con foco en sistemas Linux, ciberseguridad defensiva e inteligencia artificial aplicada. Trabajo con Debian, Ubuntu y Kali Linux, y desarrollo análisis de datos en Python y R. Interesado en automatización de sistemas, observabilidad y análisis de logs. Enfoque práctico basado en laboratorio y resolución de problemas reales."
-  github = "af-simicic"
-  description = "Blog técnico sobre Linux, ciberseguridad, análisis de datos e inteligencia artificial."
-  avatarImage = "images/avatar.jpg"
+  description = "Blog técnico sobre GNU/Linux, Redes, Seguridad, Data Science e IA"
+  avatar_initials = "AF"
+  github = "https://github.com/af-simicic"
+  mastodon = "https://mastodon.social/@AF_Simicic"
+  tagline = "Romper es fácil. Entender por qué funciona es el verdadero oficio."
 
-# Menú principal (fuente única de verdad)
-[menu]
+[markup.highlight]
+  style = "monokai"
+  lineNos = false
+  codeFences = true
 
-  [[menu.main]]
-    name = "Linux"
-    url = "/linux/"
-    weight = 1
+[taxonomies]
+  category = "categories"
+  tag = "tags"
 
-  [[menu.main]]
-    name = "Seguridad"
-    url = "/seguridad/"
-    weight = 2
+[[menus.main]]
+  name = "GNU/Linux"
+  url = "/categories/gnu-linux/"
+  weight = 1
 
-  [[menu.main]]
-    name = "Data Science"
-    url = "/data/"
-    weight = 3
+[[menus.main]]
+  name = "Redes"
+  url = "/categories/redes/"
+  weight = 2
 
-  [[menu.main]]
-    name = "IA"
-    url = "/ia/"
-    weight = 4
+[[menus.main]]
+  name = "Seguridad"
+  url = "/categories/seguridad/"
+  weight = 3
 
-[outputs]
-  home = ["HTML", "JSON"]
-  section = ["HTML"]
-  page = ["HTML"]
+[[menus.main]]
+  name = "Data Science"
+  url = "/categories/data-science/"
+  weight = 4
+
+[[menus.main]]
+  name = "IA"
+  url = "/categories/ia/"
+  weight = 5

@@ -1,12 +1,5 @@
-# Hugo build output
 public/
-
-# Hugo cache
+.hugo_build.lock
 resources/_gen/
-
-# OS / editor
 .DS_Store
 Thumbs.db
-
-# Hugo lock
-.hugo_build.lock

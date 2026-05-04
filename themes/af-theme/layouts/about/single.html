@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main class="container">
+  <a href="{{ "/" | relURL }}" class="back-link">← cd ..</a>
+
+  <header class="about-header">
+    <img src="{{ "img/avatar.png" | relURL }}" alt="Andrés Fuentes" class="avatar-about-photo">
+    <div>
+      <h1 class="article-title">~$ whoami</h1>
+      <p class="about-sub">Andrés Fuentes · af.dev</p>
+    </div>
+  </header>
+
+  <div class="article-body">
+    {{ .Content }}
+  </div>
+</main>
+{{ end }}

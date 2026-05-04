@@ -1,0 +1,100 @@
+{{ define "main" }}
+<main class="container">
+
+  <!-- 1. Author block -->
+  <div class="author-block">
+    <a href="{{ "/about/" | relURL }}" title="whoami">
+      <img src="{{ "img/avatar.png" | relURL }}" alt="Andrés Fuentes" class="avatar-large-photo avatar-link">
+    </a>
+    <div class="author-info">
+      <h1 class="author-name">{{ .Site.Params.author }}</h1>
+      <div class="author-tags">
+        <span class="tag-linux">GNU/Linux</span>
+        <span class="tag-sep">·</span>
+        <span class="tag-net">Redes</span>
+        <span class="tag-sep">·</span>
+        <span class="tag-sec">Seguridad</span>
+        <span class="tag-sep">·</span>
+        <span class="tag-data">Data Science</span>
+        <span class="tag-sep">·</span>
+        <span class="tag-ai">IA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Terminal line -->
+  <div class="terminal-line">
+    <span class="terminal-prompt">andrés@dev:~/conocimiento$</span>
+    <span class="terminal-text">{{ .Site.Params.tagline }}</span>
+    <span class="cursor"></span>
+  </div>
+
+  <!-- 3. Category grid -->
+  <div class="cat-grid">
+    {{ $gnu  := len (where .Site.RegularPages "Params.categories" "intersect" (slice "gnu-linux")) }}
+    {{ $net  := len (where .Site.RegularPages "Params.categories" "intersect" (slice "redes")) }}
+    {{ $sec  := len (where .Site.RegularPages "Params.categories" "intersect" (slice "seguridad")) }}
+    {{ $data := len (where .Site.RegularPages "Params.categories" "intersect" (slice "data-science")) }}
+    {{ $ai   := len (where .Site.RegularPages "Params.categories" "intersect" (slice "ia")) }}
+    <a href="{{ "/categories/gnu-linux/" | relURL }}" class="cat-card cat-card-linux">
+      <div class="cat-icon cat-icon-linux">$_</div>
+      <h3>GNU/Linux</h3>
+      <p>{{ $gnu }} {{ if eq $gnu 1 }}nota{{ else }}notas{{ end }}</p>
+    </a>
+    <a href="{{ "/categories/redes/" | relURL }}" class="cat-card cat-card-net">
+      <div class="cat-icon cat-icon-net">⬡</div>
+      <h3>Redes</h3>
+      <p>{{ $net }} {{ if eq $net 1 }}nota{{ else }}notas{{ end }}</p>
+    </a>
+    <a href="{{ "/categories/seguridad/" | relURL }}" class="cat-card cat-card-sec">
+      <div class="cat-icon cat-icon-sec">🔒</div>
+      <h3>Seguridad</h3>
+      <p>{{ $sec }} {{ if eq $sec 1 }}nota{{ else }}notas{{ end }}</p>
+    </a>
+    <a href="{{ "/categories/data-science/" | relURL }}" class="cat-card cat-card-data">
+      <div class="cat-icon cat-icon-data">◈</div>
+      <h3>Data Science</h3>
+      <p>{{ $data }} {{ if eq $data 1 }}nota{{ else }}notas{{ end }}</p>
+    </a>
+    <a href="{{ "/categories/ia/" | relURL }}" class="cat-card cat-card-ai">
+      <div class="cat-icon cat-icon-ai">◉</div>
+      <h3>IA</h3>
+      <p>{{ $ai }} {{ if eq $ai 1 }}nota{{ else }}notas{{ end }}</p>
+    </a>
+  </div>
+
+  <!-- 4. Recent posts -->
+  <section class="section-block">
+    <div class="section-label">
+      <span>Publicaciones recientes</span>
+      <div class="section-line"></div>
+    </div>
+    {{ $posts := where .Site.RegularPages "Type" "posts" }}
+    {{ range first 4 ($posts.ByDate.Reverse) }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </section>
+
+  <!-- 5. Projects -->
+  <section class="section-block">
+    <div class="section-label">
+      <span>Proyectos</span>
+      <div class="section-line"></div>
+    </div>
+    {{ $projects := where .Site.RegularPages "Type" "projects" }}
+    {{ range $projects }}
+    <div class="project-card">
+      <div class="project-header">
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.status }}<span class="project-status">{{ . }}</span>{{ end }}
+      </div>
+      <p>{{ .Params.description }}</p>
+      <div class="project-tags">
+        {{ range .Params.tags }}<span class="project-tag">#{{ . }}</span>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </section>
+
+</main>
+{{ end }}

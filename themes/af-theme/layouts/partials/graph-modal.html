@@ -1,0 +1,13 @@
+<div class="modal-overlay" id="graphModal" onclick="handleOverlayClick(event)">
+  <div class="modal-inner" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <span class="modal-title">⬡ <span>Grafo de conocimiento</span> — Andrés Fuentes</span>
+      <button class="modal-close" onclick="closeGraph()">ESC ✕</button>
+    </div>
+    <canvas id="graphCanvas"></canvas>
+  </div>
+</div>
+<div class="node-tooltip" id="tooltip">
+  <div class="tt-title" id="tt-title"></div>
+  <div class="tt-cat" id="tt-cat"></div>
+</div>

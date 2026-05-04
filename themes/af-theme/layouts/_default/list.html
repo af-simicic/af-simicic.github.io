@@ -1,0 +1,22 @@
+{{ define "main" }}
+<main class="container">
+  <a href="{{ "/" | relURL }}" class="back-link">← cd ..</a>
+
+  <header class="cat-header">
+    {{ $cat := .Title }}
+    <div class="cat-title-row">
+      <span class="cat-dot cat-{{ $cat | urlize }}"></span>
+      <h1>{{ $cat }}</h1>
+    </div>
+    <p class="cat-desc">{{ with .Params.description }}{{ . }}{{ end }} — {{ len .Pages }} notas</p>
+  </header>
+
+  {{ if .Pages }}
+    {{ range .Pages.ByDate.Reverse }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  {{ else }}
+    <p class="empty-msg">No hay publicaciones en esta categoría.</p>
+  {{ end }}
+</main>
+{{ end }}

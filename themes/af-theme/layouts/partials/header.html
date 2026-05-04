@@ -1,0 +1,30 @@
+<header class="site-header">
+  <a href="{{ "/" | relURL }}" class="logo">af<span>.</span>dev</a>
+
+  <nav class="nav-desktop">
+    {{ range .Site.Menus.main }}
+    <a href="{{ .URL | absURL }}" class="nav-link nav-{{ .Name | urlize }}">
+      <span class="nav-dot"></span>{{ .Name }}
+    </a>
+    {{ end }}
+  </nav>
+
+  <div class="header-right">
+    <button class="graph-btn" onclick="openGraph()">⬡ Explorar conocimiento</button>
+    <a href="{{ "/about/" | relURL }}" class="avatar" title="Andrés Fuentes">
+      {{ .Site.Params.avatar_initials }}
+    </a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="nav-mobile" id="mobileMenu">
+  {{ range .Site.Menus.main }}
+  <a href="{{ .URL | absURL }}" class="nav-link nav-{{ .Name | urlize }}">
+    <span class="nav-dot"></span>{{ .Name }}
+  </a>
+  {{ end }}
+  <button class="graph-btn-mobile" onclick="openGraph(); toggleMenu()">⬡ Explorar conocimiento</button>
+</nav>

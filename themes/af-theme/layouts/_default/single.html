@@ -1,0 +1,40 @@
+{{ define "main" }}
+<main class="container">
+  <a href="{{ "/" | relURL }}" class="back-link">← cd ..</a>
+
+  <article>
+    <header class="article-header">
+      <div class="post-meta">
+        {{ $cat := index .Params.categories 0 | default "" }}
+        <span class="cat-pill cat-{{ $cat | urlize }}">{{ $cat }}</span>
+        <span class="post-date">{{ .Date.Format "2 de January de 2006" }} · {{ .ReadingTime }} min de lectura</span>
+      </div>
+      <h1 class="article-title">{{ .Title }}</h1>
+    </header>
+
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.related }}
+    <aside class="relations">
+      <h4 class="relations-title">→ Relaciones</h4>
+      <ul>
+        {{ range . }}
+        {{ $related := $.Site.GetPage (printf "/posts/%s" .) }}
+        {{ if $related }}
+        <li>
+          <a href="{{ $related.Permalink }}">
+            {{ $cat := index $related.Params.categories 0 | default "" }}
+            <span class="cat-pill cat-{{ $cat | urlize }}">{{ $cat }}</span>
+            {{ $related.Title }}
+          </a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </aside>
+    {{ end }}
+  </article>
+</main>
+{{ end }}

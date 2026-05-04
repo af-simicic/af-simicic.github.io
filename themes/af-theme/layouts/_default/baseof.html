@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "header.html" . }}
+  {{ block "main" . }}{{ end }}
+  {{ partial "footer.html" . }}
+  {{ partial "graph-modal.html" . }}
+  <script src="{{ "js/graph.js" | relURL }}"></script>
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById('mobileMenu');
+      var ham = document.getElementById('hamburger');
+      menu.classList.toggle('open');
+      ham.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
